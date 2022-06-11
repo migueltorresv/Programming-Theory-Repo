@@ -11,9 +11,35 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI incorrectPointText;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private GameObject panelGameOver;
+    [SerializeField] private GameObject panelWellPlader;
     private int goodPoint = 0;
     private int badPoint = 0;
     private int cantFinishSpawn = 0;
+    private int cantObjectsSpawned;
+    public int GoodPoint
+    {
+        get { return goodPoint; }
+        set
+        {
+            goodPoint = value;
+            correctPointText.SetText($"Good: {goodPoint.ToString()}");
+            StartCoroutine(WaitForFinishGame());
+        }
+    }
+
+    public int BadPoint
+    {
+        get { return badPoint; }
+        set
+        {
+            badPoint = value;
+            incorrectPointText.SetText( $"Bad: {badPoint.ToString()}");
+            if (badPoint > 2)
+            {
+                GameOver();
+            }
+        }
+    }
 
     public int CantFinishSpawn
     {
@@ -27,13 +53,12 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
-
 
     private void Start()
     {
         nameText.SetText($"Recycler {MainManager.Instance.namePlayer}");
         panelGameOver.SetActive(false);
+        panelWellPlader.SetActive(false);
     }
 
     public void RestartGame()
@@ -48,23 +73,29 @@ public class GameManager : MonoBehaviour
 
     private void CountObjects()
     {
-        Debug.Log("terminaron de hacer spawn");
+        StartCoroutine(WaitForCountObjects());
     }
 
-    public void AddGoodPoint()
+    private IEnumerator WaitForCountObjects()
     {
-        goodPoint += 1;
-        correctPointText.SetText($"Good: {goodPoint.ToString()}");
+        yield return new WaitForSeconds(1);
+        cantObjectsSpawned = GameObject.FindGameObjectsWithTag("Trash").Length;
+        Debug.Log($"{cantObjectsSpawned} instanciados");
     }
 
-    public void AddBadPoint()
+    private IEnumerator WaitForFinishGame()
     {
-        badPoint += 1;
-        incorrectPointText.SetText( $"Bad: {badPoint.ToString()}");
-        if (badPoint > 2)
+        yield return new WaitForSeconds(4);
+        if ((goodPoint + badPoint) == cantObjectsSpawned)
         {
-            GameOver();
+            //verficar despues de un tiempo, para finalizar el juego
+            WellPlayed();
         }
+    }
+
+    private void WellPlayed()
+    {
+        panelWellPlader.SetActive(true);
     }
 
     public void ExitScene()
