@@ -37,6 +37,7 @@ public class Recycler : Person
             ChangeComponentsValues(false);
             base.DropObject(parent);
 =======
+<<<<<<< HEAD
 
             ChangeComponentsValues(false);
             base.DropObject(parent);
@@ -44,6 +45,10 @@ public class Recycler : Person
             base.objForDrop.GetComponent<Rigidbody>().isKinematic = false;
             DropObject(parent);
 
+=======
+            base.objForDrop.GetComponent<Rigidbody>().isKinematic = false;
+            DropObject(parent);
+>>>>>>> parent of 2612313 (Revert "Merge branch 'scene-main'")
 >>>>>>> Stashed changes
         }
     }
@@ -61,12 +66,6 @@ public class Recycler : Person
         base.objForDrop = other;
         base.objForDrop.transform.SetParent(handPos);
         base.objForDrop.transform.position = handPos.position;
-        ChangeComponentsValues(true);
-    }
-
-    private void ChangeComponentsValues(bool isTrue)
-    {
-        base.objForDrop.GetComponent<Rigidbody>().isKinematic = isTrue;
-        base.objForDrop.GetComponent<BoxCollider>().enabled = !isTrue;
+        base.objForDrop.GetComponent<Rigidbody>().isKinematic = true;
     }
 }

@@ -43,6 +43,17 @@ public class Neighbour : Person
             count += 1;
             StartCoroutine(Spawn());
         }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+        else
+        {
+            gameManager.CantFinishSpawn += 1;
+            StopCoroutine(Spawn());
+        }
+>>>>>>> Stashed changes
+>>>>>>> parent of 2612313 (Revert "Merge branch 'scene-main'")
     }
 
     protected override void DropObject(Vector3 posForDrop)
