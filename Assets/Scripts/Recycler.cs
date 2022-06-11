@@ -33,13 +33,8 @@ public class Recycler : Person
         {
             Vector3 parent = other.gameObject.transform.parent.transform.position + new Vector3(0, 2, 0);
             base.objForDrop.transform.SetParent(other.transform);
-<<<<<<< Updated upstream
             ChangeComponentsValues(false);
-            base.DropObject(parent);
-=======
-            base.objForDrop.GetComponent<Rigidbody>().isKinematic = false;
             DropObject(parent);
->>>>>>> Stashed changes
         }
     }
 
@@ -56,6 +51,12 @@ public class Recycler : Person
         base.objForDrop = other;
         base.objForDrop.transform.SetParent(handPos);
         base.objForDrop.transform.position = handPos.position;
-        base.objForDrop.GetComponent<Rigidbody>().isKinematic = true;
+        ChangeComponentsValues(true);
+    }
+
+    private void ChangeComponentsValues(bool isTrue)
+    {
+        base.objForDrop.GetComponent<Rigidbody>().isKinematic = isTrue;
+        base.objForDrop.GetComponent<BoxCollider>().enabled = !isTrue;
     }
 }
