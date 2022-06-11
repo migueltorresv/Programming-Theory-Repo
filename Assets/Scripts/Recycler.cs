@@ -34,7 +34,7 @@ public class Recycler : Person
             Vector3 parent = other.gameObject.transform.parent.transform.position + new Vector3(0, 2, 0);
             base.objForDrop.transform.SetParent(other.transform);
             ChangeComponentsValues(false);
-            base.DropObject(parent);
+            DropObject(parent);
         }
     }
 
