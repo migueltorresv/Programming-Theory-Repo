@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2434642735335183054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.165}
+  m_LocalPosition: {x: 0, y: 0, z: 0.942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5591056449718248532}
@@ -42,11 +42,12 @@ GameObject:
   - component: {fileID: 5528294668464323880}
   - component: {fileID: 72129317890272011}
   - component: {fileID: 945558232884189573}
+  - component: {fileID: 5780559789299772153}
   - component: {fileID: 8793443298330185646}
   - component: {fileID: 658626228}
   m_Layer: 0
   m_Name: Recycler
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +131,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &5780559789299772153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178840234217700751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.624861, y: 0.023695469, z: 1.5632979}
+  m_Center: {x: 0.019028476, y: 0.9862008, z: 0.5154321}
 --- !u!54 &8793443298330185646
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,7 +11,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Neighbour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Recycler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Trash.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Container.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CanvasUIMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2AJi7ZHLsvsbGk7dXwwaSxQ1a8f" />
   <component name="ProjectViewState">
@@ -59,6 +65,7 @@
       <workItem from="1654733936690" duration="1715000" />
       <workItem from="1654805543741" duration="733000" />
       <workItem from="1654811416002" duration="10012000" />
+      <workItem from="1654872597215" duration="25435000" />
     </task>
     <servers />
   </component>

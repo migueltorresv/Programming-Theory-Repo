@@ -43,6 +43,14 @@ public class Neighbour : Person
             count += 1;
             StartCoroutine(Spawn());
         }
+<<<<<<< Updated upstream
+=======
+        else
+        {
+            gameManager.CantFinishSpawn += 1;
+            StopCoroutine(Spawn());
+        }
+>>>>>>> Stashed changes
     }
 
     protected override void DropObject(Vector3 posForDrop)
