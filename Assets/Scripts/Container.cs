@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class Container : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Trash"))
@@ -16,12 +23,12 @@ public class Container : MonoBehaviour
             if (matContainer.name == matTrash.name)
             {
                 //add point player
-                Debug.Log("Correcto");
+                gameManager.AddGoodPoint();
             }
             else
             {
                 //reject or make animation or change color
-                Debug.Log("Incorrecto");
+                gameManager.AddBadPoint();
             }
         }
     }
